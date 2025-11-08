@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acordes de Quinta (Power Chords) · Musicala</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-flex">
+      <img src="logo.png" alt="Musicala" class="logo" />
+      <div class="headings">
+        <h1>Acordes de quinta en la guitarra</h1>
+        <p class="subtitle">Movibles, simples y potentes: <strong>1–5</strong> (opcional <strong>8</strong>).</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro card">
+      <h2>¿Qué es un “acorde de quinta”?</h2>
+      <p>
+        Es un acorde reducido que usa solo la <strong>tónica (1)</strong> y la <strong>quinta justa (5)</strong>. 
+        A veces se añade la <strong>octava (8)</strong> de la tónica para engrosar el sonido. 
+        Al no tener 3ª, <b>no es mayor ni menor</b>.
+      </p>
+      <div class="grid-2">
+        <div>
+          <h3>Fórmula</h3>
+          <p><b>1–5</b> (opcional <b>8</b>).</p>
+          <ul class="chips">
+            <li class="chip">Do5 = 1–5</li>
+            <li class="chip">Sol5 = 1–5</li>
+            <li class="chip">Re5 = 1–5</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cómo leerlos</h3>
+          <p>
+            Usaremos únicamente <b>Do, Re, Mi, Fa, Sol, La, Si</b> con sus alteraciones en formato latino:
+            <b>♯</b> (sostenido) y <b>♭</b> (bemol).
+          </p>
+          <details>
+            <summary>Ejemplos de escritura</summary>
+            <div class="equiv">
+              <span>Fa♯ = Fa sostenido</span><span>Sol♭ = Sol bemol</span>
+              <span>La♯ = La sostenido</span><span>Sib = Si bemol</span>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="diagram card">
+      <h2>Diagrama interactivo</h2>
+      <p>Elige la nota raíz, la cuerda base y si quieres sumar la octava. El diagrama muestra qué trastes pisar.</p>
+      <form class="controls" id="controls" aria-label="Generador de power chords">
+        <label>
+          Nota raíz:
+          <select id="root">
+            <option value="Do">Do</option>
+            <option value="Do#">Do♯ / Reb</option>
+            <option value="Re">Re</option>
+            <option value="Re#">Re♯ / Mib</option>
+            <option value="Mi" selected>Mi</option>
+            <option value="Fa">Fa</option>
+            <option value="Fa#">Fa♯ / Sol♭</option>
+            <option value="Sol">Sol</option>
+            <option value="Sol#">Sol♯ / Lab</option>
+            <option value="La">La</option>
+            <option value="La#">La♯ / Sib</option>
+            <option value="Si">Si</option>
+          </select>
+        </label>
+
+        <label>
+          Cuerda base:
+          <select id="shape">
+            <option value="E">6ª cuerda (Mi grave)</option>
+            <option value="A" selected>5ª cuerda (La)</option>
+          </select>
+        </label>
+
+        <label class="inline">
+          <input type="checkbox" id="octave" checked />
+          Añadir octava (1–5–8)
+        </label>
+
+        <label>
+          Traste sugerido:
+          <input id="fret" type="number" min="0" max="14" value="5" />
+        </label>
+
+        <button type="button" id="btnSuggest">Sugerir posición cómoda</button>
+      </form>
+
+      <div class="fretboard-wrap">
+        <div class="legend">
+          <span class="dot rootdot">1 (tónica)</span>
+          <span class="dot fifthdot">5 (quinta)</span>
+          <span class="dot octdot">8 (octava)</span>
+          <span class="mute">X = cuerda muteada</span>
+        </div>
+        <div id="fretboard" class="fretboard" role="img" aria-label="Diagrama de mástil"></div>
+      </div>
+
+      <div class="readout">
+        <p id="nameOut" class="big"></p>
+        <pre id="tabOut" class="tab"></pre>
+      </div>
+    </section>
+
+    <section class="positions card">
+      <h2>Formas básicas movibles</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Forma en 6ª cuerda (E-shape)</h3>
+          <p><b>2 dedos</b>: 6ª (1) y 5ª (5) dos trastes arriba. <br>
+             <b>3 dedos</b>: suma 4ª (octava de la tónica) dos trastes arriba.</p>
+          <code>Ej.: Sol5 en 6ª → 3–5–5 (cuerdas 6–5–4)</code>
+        </div>
+        <div>
+          <h3>Forma en 5ª cuerda (A-shape)</h3>
+          <p><b>2 dedos</b>: 5ª (1) y 4ª (5). <br>
+             <b>3 dedos</b>: suma 3ª cuerda (octava) dos trastes arriba.</p>
+          <code>Ej.: Do5 en 5ª → 3–5–5 (cuerdas 5–4–3)</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips card">
+      <h2>Técnica rápida</h2>
+      <ul>
+        <li><b>Mutea</b> cuerdas que no suenan: apoya levemente el índice para apagar 1ª–3ª cuando usas forma en 6ª; o 1ª–2ª–6ª cuando usas forma en 5ª.</li>
+        <li><b>Púa</b>: golpes cortos y precisos; alterna abajo/arriba en rítmicas rápidas.</li>
+        <li><b>Traslación</b>: la forma es igual, solo cambia el traste de la raíz.</li>
+      </ul>
+    </section>
+
+    <section class="practice card">
+      <h2>Ejercicios (progresivo)</h2>
+      <ol>
+        <li><b>Un compás, una raíz:</b> 4 pulsos en La5 (5ª cuerda, traste 5).</li>
+        <li><b>Dos raíces:</b> La5 → Do5 → Re5 → Mi5 (sube y baja).</li>
+        <li><b>Patrón rítmico:</b> ♩ ♫ ♩ ♩ con palm mute (apoya la mano cerca del puente).</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>Hecho con cariño por Musicala • Guía educativa para clase de guitarra</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
